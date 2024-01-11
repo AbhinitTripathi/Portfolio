@@ -1,0 +1,170 @@
+:root{
+	--dark: #374151;
+	--darker: #1f2937;
+	--darkest: #111827;
+}
+
+* {
+	box-sizing: border-box;
+	margin:0;
+	font-family: 'Trebuchet MS', Calibri, 'Gill Sans', sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100dvh;
+	background-color: var(--dark);
+	color:antiquewhite;
+}
+
+header {
+	padding: 2rem 1rem;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 800px;
+}
+
+header h1 {
+	font-size: 2.5rem;
+	font-weight: 200;
+	margin-bottom: 1rem;
+	background-image: linear-gradient(to right, cyan, blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+#dateToday {
+	font-size: 1.3rem;
+	font-weight: 900;
+	margin: 1rem 0.5rem;
+	background-image: linear-gradient(to right, cyan, blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#newTask {
+	display: flex;
+}
+
+input, button {
+	appearance: none;
+	margin: none;
+	border: none;
+	background: none;
+}
+
+#newTaskInput {
+	flex: 1 1 0%;
+	background-color: var(--darker);
+	padding: 0.75rem;
+	border-radius: .75rem;
+	margin-right: 1rem;
+	font-size: 1rem;
+	caret-color: pink;
+	color: lightblue;
+}
+#newTaskInput:focus {
+	border: none;
+	outline: none;
+}
+
+#addTaskButton {
+	color: magenta;
+	font-size: 1rem;
+	font-weight: bolder;
+	background-image: linear-gradient(to left, magenta, pink);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	cursor: pointer;
+	transition: 0.3s;
+}
+#addTaskButton:hover {
+	opacity: 0.8;
+}
+#addTaskButton:active {
+	opacity: 0.6;
+}
+
+main {
+	flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.taskList {
+	padding: 1rem;
+}
+.taskList h2 {
+	font-size: 2rem;
+	font-weight: 200;
+	margin-bottom: 1rem;
+	color: gray;
+	background-image: linear-gradient(to right, cyan, blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.taskList .task {
+	display: flex;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    transform: translateX(150%); /* Initially position off-screen to the right */
+    transition: transform 0.3s ease-in-out; /* Add a transition effect */
+}
+
+.text {
+	color: whitesmoke;
+	font-size: 1.25rem;
+	width: 100%;
+	display: block;
+	transition: 0.4s;
+	caret-color: pink;
+}
+.text:focus {
+	border: none;
+	outline: none;
+}
+.text:not(:read-only) {
+	color: magenta;
+}
+
+.actions {
+	display: flex;
+	margin: 0 -0.5rem;
+}
+
+.actions button{
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.12rem;
+	font-weight: 700;
+	transition: 0.4s;
+	text-transform: uppercase;
+}
+.actions button:hover {
+	opacity: 0.8;
+}
+.actions button:active {
+	opacity: 0.6;
+}
+
+.actions .edit {
+	background-image: linear-gradient(to right, magenta, purple);
+	border-radius: 0.5rem;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.actions .delete {
+	background-image: linear-gradient(to left, red, crimson);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.content {
+	flex: 1 1 0%;
+}

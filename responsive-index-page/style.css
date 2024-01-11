@@ -1,0 +1,344 @@
+/* ################## DEFAULTS ############################ */
+* {
+    box-sizing: border-box;
+}
+
+nav,
+header,
+footer {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+p {
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+article p {
+    font-size: 35px;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.row::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+/* ################## NAV BAR ############################ */
+nav {
+    width: 100%;
+    margin: 0;
+}
+
+nav ul {
+    background-color: #dbdbdb;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+ul.topnav li {
+    list-style: none;
+    float: left;
+}
+
+ul.topnav li.topnav-right {
+    float: right;
+}
+
+ul.topnav li a {
+    display: block;
+    text-decoration: none;
+    min-height: 16px;
+    text-align: center;
+    padding: 14px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+ul.topnav li a:hover {
+    background-color: #2c3ec7;
+    color: #fff;
+}
+
+ul.topnav li.dropdown-icon {
+    display: none;
+}
+
+/* ################## Custom styles ############################ */
+#section-1-gradient {
+    background: #076DFF;
+    background-image: linear-gradient(to top, #65a5ff, #076DFF);
+}
+
+div.box {
+    background-color: azure;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15),
+        5px 5px 2px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 24px;
+    padding: 36px 24px 40px;
+    border-radius: 7px;
+}
+
+button {
+    font-size: 32px;
+    font-weight: 700;
+    color: azure;
+    border: none;
+    border-radius: 7px;
+    display: block;
+    background-color: #0069FF;
+    cursor: pointer;
+    padding: 15px 60px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+div.ezio img {
+    display: block;
+    margin: auto;
+    width: 250px;
+    border: 2px dashed #65a5ff;
+    border-radius: 7px;
+    box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
+}
+
+div.icon {
+    width: 100%;
+}
+
+.leftSide-col {
+    margin-left: 15%;
+}
+
+.rightSide-col {
+    margin-right: 15%;
+}
+
+h1.large {
+    color: white;
+    font-size: 56px;
+    margin: 0;
+    line-height: 70px;
+}
+
+h1.section-2-header {
+    font-size: 3em;
+    text-align: center;
+}
+
+form h2 {
+    color: #fff;
+}
+
+input[type="text"] {
+    font-size: 20px;
+    width: 400px;
+    min-width: 100px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer.footer {
+    background-color: #666;
+    padding-left: 10%;
+}
+footer.footer h1 {
+    color: azure;
+}
+footer.footer ul {
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+}
+footer.footer ul li {
+    color: white;
+    line-height: 1.5;
+}
+
+/* ################## MOBILE ############################ */
+@media screen and (max-width: 980px) {
+    ul.topnav li:not(:nth-child(1)) {
+        display: none;
+    }
+
+    ul.topnav li.dropdown-icon {
+        display: block;
+        float: right;
+    }
+
+    ul.topnav.responsive li.dropdown-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        float: right;
+    }
+
+    ul.topnav.responsive {
+        position: relative;
+    }
+
+    ul.topnav.responsive li {
+        display: inline;
+        float: none;
+    }
+
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+    }
+
+    .col-6,
+    .col-4, .col-7, .col-5, .col-3 {
+        width: 100%;
+        margin: 0;
+    }
+
+    div.mobile-stack {
+        width: 50%;
+        display: block;
+    }
+
+    div.box {
+        padding: 5px;
+        display: block;
+        margin: 15px;
+    }
+
+    div.leftSide-col,
+    div.rightSide-col {
+        margin: 15px;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+
+    .video-container {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        width: 100%
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    header h1.section-2-header {
+        font-size: 50px;
+    }
+
+    div.col-12 button.learn-more {
+        padding: 13px;
+        font-size: 26px;
+    }
+
+    article p {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    footer.footer div.mobile-stack h1{
+        font-size: 18px;
+    }
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    width: 100%
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
