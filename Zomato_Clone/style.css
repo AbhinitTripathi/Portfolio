@@ -139,6 +139,9 @@
 }
 
 /* ##################################### CPLLECTIONS ############################################### */
+.collections{
+  max-width: 1200px;
+}
 .collections h1 {
   font-weight: 600;
 }
@@ -497,6 +500,10 @@
   .hero__section--container-heading {
     font-size: 20px;
     width: 95%;
+  }
+
+  .collections__sub-heading :first-child{
+    padding: 0;
   }
 
   .collections__sub-heading span:nth-child(2) {

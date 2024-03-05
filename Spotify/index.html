@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="index.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <title>Music Project</title>
+</head>
+<body>
+  <!-- RIGHT & LEFT SECTIONS -->
+  <div class="container flex">
+    <!-- LEFT-SECTION -->
+    <section class="left">
+      <!-- HOME -->
+      <div class="left__home bg-gray">
+        <div class="logo">
+          <img src="images/Spotify-Black-Logo.wine.png" alt="spotify logo" class="invert" style="width: 75px;">
+          <i class="fa-solid fa-xmark btn" id="closeLibrary"></i>
+        </div>
+        <ul>
+          <li class="list__item"><i class="fa-solid fa-house""></i>Home</li>
+          <li class="list__item left__search"><i class="fa-solid fa-magnifying-glass"></i>Search</li>
+        </ul>
+      </div>
+      <!-- LIBRARY -->
+      <div class="left__lib bg-gray">
+        <div class="lib__heading flex">
+          <button class="flex btn filter-gray"><img class="invert" src="images/playlist.svg" alt="playlist" style="width:20px;">Your Library</button>
+          <button class="flex btn add"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <!-- LIB-SONGS -->
+        <div class="song__lists">
+          <ol>
+            <!-- <li>
+              <div class="song__info">
+                <i class="fa-solid fa-music"></i>
+                <div class="info">
+                  <h4>Song name</h4>
+                  <h5>song artist</h5>
+                </div>
+              </div>
+              <i class="fa-regular fa-circle-play"></i>
+            </li> -->
+          </ol>
+        </div>
+  
+        <!-- FOOTER-LEFT -->
+        <div class="footer">
+          <div><a href="#">Legal</a></div>
+          <div><a href="#">Privacy Center</a></div>
+          <div><a href="#">Privacy Policy</a></div>
+          <div><a href="#">Cookies</a></div>
+          <div><a href="#">About Ads</a></div>
+          <div><a href="#">Accessibility</a></div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- RIGHT-SECTION -->
+    <section class="right bg-gray">
+      <!-- RIGHT-NAV -->
+      <header class="header flex">
+        <nav class="navbar flex">
+          <i class="fa-solid fa-angle-left btn nav"></i>
+          <i class="fa-solid fa-angle-right btn nav"></i>
+          <i class="fa-solid fa-bars btn nav" id="hamburger"></i>
+        </nav>
+        <div class="buttons">
+          <button type="button" class="btn">SignUp</button>
+          <button type="button" class="btn">Log in</button>
+        </div>
+      </header>
+  
+      <!-- RIGHT-PLAYLISTS -->
+      <div class="right__playlists">
+        <h1>Your Playlist</h1>
+        <div class="card__container">
+          <!-- MUSIC-CARDS -->
+          <!-- <div class="card" data-folder="Minutes To Midnight">
+            <div class="card__sub-container">
+              <button class="play">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <img src="https://i.scdn.co/image/ab67616d00001e022c32ff586ba168b54a2da61e" alt="Minutes To Mindnight-LP">
+            </div>
+            <h3>Minutes To Mindnight</h3>
+            <p>Linkin Park</p>
+          </div> -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PLAYBAR -->
+  <div class="playbar">
+  <!-- MAIN-PLAYBAR -->
+    <section class="playlist__playbar">
+      <div class="flex song__buttons">
+        <div class="control__buttons">
+          <div class="playbar__song_info flex">
+            <span id="songName"></span>
+            <span id="songArtist" style="font-size: 12px;"></span>
+          </div>
+          <div class="song__buttons_control flex">
+            <i class="fa-solid fa-backward-step" id="prev" onclick="prev()"></i>
+            <i class="fa-solid fa-play" id="play"></i>
+            <i class="fa-solid fa-forward-step" id="next" onclick="next()"></i>
+            <div class="volumeRocker">
+              <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+              <input type="range" name="volumeRange" value="75" class="custom-slider" id="volume">
+            </div>
+          </div>
+          
+          <div class="playbar__song_time">
+            
+          </div>
+        </div>
+        <div>
+          <div class="seekbar">
+            <div class="seekbar__circle">
+              <!-- seekbar circle -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
