@@ -23,7 +23,7 @@ async function getSongs(folder) {
 
   currentFolder = encodeURI(folder);
   //Fetching songs library
-  let a = await fetch(`http://127.0.0.1:3000/${currentFolder}/`);
+  let a = await fetch(`./${currentFolder}/`);
   let res = await a.text();
   let div = document.createElement("div");
   div.innerHTML = res;
@@ -69,9 +69,7 @@ async function getSongs(folder) {
 }
 
 const playMusic = (track) => {
-  currentSong.src = `/${currentFolder}/` + track
-  currentSong.volume = 0.75;
-  volume.value = "75";
+  currentSong.src = `/${currentFolder}/` + track;
   currentSong.play();
   document.getElementById('play').classList.remove('fa-play');
   document.getElementById('play').classList.add('fa-pause');
@@ -85,7 +83,7 @@ const playMusic = (track) => {
 }
 
 async function displayAlbums(){
-  let a = await fetch(`http://127.0.0.1:3000/songs/`);
+  let a = await fetch(`/songs/`);
   let res = await a.text();
   let div = document.createElement("div");
   div.innerHTML = res;
@@ -96,7 +94,7 @@ async function displayAlbums(){
       let tFolder = e.href.split("/").slice(-2)[0];
       
       //Get the metadata of the folder
-      let a = await fetch(`http://127.0.0.1:3000/songs/${tFolder}/info.json`);
+      let a = await fetch(`/songs/${tFolder}/info.json`);
       let res = await a.json();
       document.querySelector(".card__container").innerHTML = document.querySelector(".card__container").innerHTML +
       `<div class="card" data-folder="${decodeURI(tFolder)}">
@@ -119,6 +117,22 @@ async function displayAlbums(){
       });
     });
   });
+}
+
+//Attach event listner to play next and previous
+//Playbar functionality
+function play(){
+  if (currentSong.currentTime == 0) {
+    playMusic(document.getElementsByTagName("ol")[0].firstElementChild.getElementsByTagName("h4")[0].innerHTML+'-'+song_artist+'.mp3');
+  } else if (currentSong.paused) {
+    document.getElementById('play').classList.remove('fa-play');
+    document.getElementById('play').classList.add('fa-pause');
+    currentSong.play();
+  } else if (!currentSong.paused) {
+    document.getElementById('play').classList.remove('fa-pause');
+    document.getElementById('play').classList.add('fa-play');
+    currentSong.pause();
+  }
 }
 
 //Add Event Listener To Previous
@@ -147,25 +161,11 @@ async function main() {
 
   //generate song list
   await getSongs("songs/Meteora");
+  currentSong.volume = 0.75;
+  volume.value = "75";
 
   //Display All albums on the page
   displayAlbums();
-
-  //Attach event listner to play next and previous
-  //Playbar functionality
-  play.addEventListener("click", () => {
-    if (currentSong.currentTime == 0) {
-      playMusic(document.getElementsByTagName("ol")[0].firstElementChild.getElementsByTagName("h4")[0].innerHTML+'-'+song_artist+'.mp3');
-    } else if (currentSong.paused) {
-      document.getElementById('play').classList.remove('fa-play');
-      document.getElementById('play').classList.add('fa-pause');
-      currentSong.play();
-    } else if (!currentSong.paused) {
-      document.getElementById('play').classList.remove('fa-pause');
-      document.getElementById('play').classList.add('fa-play');
-      currentSong.pause();
-    }
-  });
 
   //Listen for song time update event
   currentSong.addEventListener("timeupdate", () => {
